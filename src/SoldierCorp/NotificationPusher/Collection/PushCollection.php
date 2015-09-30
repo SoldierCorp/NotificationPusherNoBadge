@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace SoldierCorp\NotificationPusher\Collection;
+namespace soldiercorp\NotificationPusher\Collection;
 
-use SoldierCorp\NotificationPusher\Model\PushInterface;
+use soldiercorp\NotificationPusher\Model\PushInterface;
 
 /**
  * PushCollection.
  *
- * @uses \SoldierCorp\NotificationPusher\Collection\AbstractCollection
+ * @uses \soldiercorp\NotificationPusher\Collection\AbstractCollection
  * @uses \IteratorAggregate
  * @author Cédric Dugat <cedric@dugat.me>
  */
@@ -39,7 +39,7 @@ class PushCollection extends AbstractCollection implements \IteratorAggregate
     }
 
     /**
-     * @param \SoldierCorp\NotificationPusher\Model\PushInterface $push Push
+     * @param \soldiercorp\NotificationPusher\Model\PushInterface $push Push
      */
     public function add(PushInterface $push)
     {

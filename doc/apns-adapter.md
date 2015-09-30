@@ -11,12 +11,12 @@
 
 require_once '/path/to/vendor/autoload.php';
 
-use SoldierCorp\NotificationPusher\PushManager,
-    SoldierCorp\NotificationPusher\Adapter\Apns as ApnsAdapter,
-    SoldierCorp\NotificationPusher\Collection\DeviceCollection,
-    SoldierCorp\NotificationPusher\Model\Device,
-    SoldierCorp\NotificationPusher\Model\Message,
-    SoldierCorp\NotificationPusher\Model\Push
+use soldiercorp\NotificationPusher\PushManager,
+    soldiercorp\NotificationPusher\Adapter\Apns as ApnsAdapter,
+    soldiercorp\NotificationPusher\Collection\DeviceCollection,
+    soldiercorp\NotificationPusher\Model\Device,
+    soldiercorp\NotificationPusher\Model\Message,
+    soldiercorp\NotificationPusher\Model\Push
 ;
 
 // First, instantiate the manager.
@@ -54,12 +54,12 @@ $pushManager->push();
 
 require_once '/path/to/vendor/autoload.php';
 
-use SoldierCorp\NotificationPusher\PushManager,
-    SoldierCorp\NotificationPusher\Adapter\Apns as ApnsAdapter,
-    SoldierCorp\NotificationPusher\Collection\DeviceCollection,
-    SoldierCorp\NotificationPusher\Model\Device,
-    SoldierCorp\NotificationPusher\Model\Message,
-    SoldierCorp\NotificationPusher\Model\Push
+use soldiercorp\NotificationPusher\PushManager,
+    soldiercorp\NotificationPusher\Adapter\Apns as ApnsAdapter,
+    soldiercorp\NotificationPusher\Collection\DeviceCollection,
+    soldiercorp\NotificationPusher\Model\Device,
+    soldiercorp\NotificationPusher\Model\Message,
+    soldiercorp\NotificationPusher\Model\Push
 ;
 
 // First, instantiate the manager.
@@ -117,8 +117,8 @@ The feedback service is used to list tokens of devices which not have your appli
 
 require_once '/path/to/vendor/autoload.php';
 
-use SoldierCorp\NotificationPusher\PushManager,
-    SoldierCorp\NotificationPusher\Adapter\Apns as ApnsAdapter
+use soldiercorp\NotificationPusher\PushManager,
+    soldiercorp\NotificationPusher\Adapter\Apns as ApnsAdapter
 ;
 
 // First, instantiate the manager.

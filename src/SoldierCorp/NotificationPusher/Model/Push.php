@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace SoldierCorp\NotificationPusher\Model;
+namespace soldiercorp\NotificationPusher\Model;
 
-use SoldierCorp\NotificationPusher\Collection\DeviceCollection;
-use SoldierCorp\NotificationPusher\Adapter\AdapterInterface;
-use SoldierCorp\NotificationPusher\Exception\AdapterException;
+use soldiercorp\NotificationPusher\Collection\DeviceCollection;
+use soldiercorp\NotificationPusher\Adapter\AdapterInterface;
+use soldiercorp\NotificationPusher\Exception\AdapterException;
 
 /**
  * Push.
@@ -29,17 +29,17 @@ class Push extends BaseOptionedModel implements PushInterface
     private $status;
 
     /**
-     * @var \SoldierCorp\NotificationPusher\Adapter\AdapterInterface
+     * @var \soldiercorp\NotificationPusher\Adapter\AdapterInterface
      */
     private $adapter;
 
     /**
-     * @var \SoldierCorp\NotificationPusher\Model\MessageInterface
+     * @var \soldiercorp\NotificationPusher\Model\MessageInterface
      */
     private $message;
 
     /**
-     * @var \SoldierCorp\NotificationPusher\Collection\DeviceCollection
+     * @var \soldiercorp\NotificationPusher\Collection\DeviceCollection
      */
     private $devices;
 
@@ -51,15 +51,15 @@ class Push extends BaseOptionedModel implements PushInterface
     /**
      * Constructor.
      *
-     * @param \SoldierCorp\NotificationPusher\Adapter\AdapterInterface $adapter Adapter
+     * @param \soldiercorp\NotificationPusher\Adapter\AdapterInterface $adapter Adapter
      * @param DeviceInterface|DeviceCollection                 $devices Device(s)
-     * @param \SoldierCorp\NotificationPusher\Model\MessageInterface   $message Message
+     * @param \soldiercorp\NotificationPusher\Model\MessageInterface   $message Message
      * @param array                                            $options Options
      *
      * Options are adapters specific ones, like Apns "badge" or "sound" option for example.
      * Of course, they can be more general.
      *
-     * @throws \SoldierCorp\NotificationPusher\Exception\AdapterException
+     * @throws \soldiercorp\NotificationPusher\Exception\AdapterException
      */
     public function __construct(AdapterInterface $adapter, $devices, MessageInterface $message, array $options = array())
     {
@@ -112,7 +112,7 @@ class Push extends BaseOptionedModel implements PushInterface
      *
      * @param string $status Status
      *
-     * @return \SoldierCorp\NotificationPusher\Model\PushInterface
+     * @return \soldiercorp\NotificationPusher\Model\PushInterface
      */
     public function setStatus($status)
     {
@@ -134,7 +134,7 @@ class Push extends BaseOptionedModel implements PushInterface
     /**
      * Declare as pushed.
      *
-     * @return \SoldierCorp\NotificationPusher\Model\PushInterface
+     * @return \soldiercorp\NotificationPusher\Model\PushInterface
      */
     public function pushed()
     {
@@ -147,7 +147,7 @@ class Push extends BaseOptionedModel implements PushInterface
     /**
      * Get Adapter.
      *
-     * @return \SoldierCorp\NotificationPusher\Adapter\AdapterInterface
+     * @return \soldiercorp\NotificationPusher\Adapter\AdapterInterface
      */
     public function getAdapter()
     {
@@ -157,9 +157,9 @@ class Push extends BaseOptionedModel implements PushInterface
     /**
      * Set Adapter.
      *
-     * @param \SoldierCorp\NotificationPusher\Adapter\AdapterInterface $adapter Adapter
+     * @param \soldiercorp\NotificationPusher\Adapter\AdapterInterface $adapter Adapter
      *
-     * @return \SoldierCorp\NotificationPusher\Model\PushInterface
+     * @return \soldiercorp\NotificationPusher\Model\PushInterface
      */
     public function setAdapter(AdapterInterface $adapter)
     {
@@ -171,7 +171,7 @@ class Push extends BaseOptionedModel implements PushInterface
     /**
      * Get Message.
      *
-     * @return \SoldierCorp\NotificationPusher\Model\MessageInterface
+     * @return \soldiercorp\NotificationPusher\Model\MessageInterface
      */
     public function getMessage()
     {
@@ -181,9 +181,9 @@ class Push extends BaseOptionedModel implements PushInterface
     /**
      * Set Message.
      *
-     * @param \SoldierCorp\NotificationPusher\Model\MessageInterface $message Message
+     * @param \soldiercorp\NotificationPusher\Model\MessageInterface $message Message
      *
-     * @return \SoldierCorp\NotificationPusher\Model\PushInterface
+     * @return \soldiercorp\NotificationPusher\Model\PushInterface
      */
     public function setMessage(MessageInterface $message)
     {
@@ -195,7 +195,7 @@ class Push extends BaseOptionedModel implements PushInterface
     /**
      * Get Devices.
      *
-     * @return \SoldierCorp\NotificationPusher\Collection\DeviceCollection
+     * @return \soldiercorp\NotificationPusher\Collection\DeviceCollection
      */
     public function getDevices()
     {
@@ -205,9 +205,9 @@ class Push extends BaseOptionedModel implements PushInterface
     /**
      * Set Devices.
      *
-     * @param \SoldierCorp\NotificationPusher\Collection\DeviceCollection $devices Devices
+     * @param \soldiercorp\NotificationPusher\Collection\DeviceCollection $devices Devices
      *
-     * @return \SoldierCorp\NotificationPusher\Model\PushInterface
+     * @return \soldiercorp\NotificationPusher\Model\PushInterface
      */
     public function setDevices(DeviceCollection $devices)
     {
@@ -233,7 +233,7 @@ class Push extends BaseOptionedModel implements PushInterface
      *
      * @param \DateTime $pushedAt PushedAt
      *
-     * @return \SoldierCorp\NotificationPusher\Model\PushInterface
+     * @return \soldiercorp\NotificationPusher\Model\PushInterface
      */
     public function setPushedAt(\DateTime $pushedAt)
     {

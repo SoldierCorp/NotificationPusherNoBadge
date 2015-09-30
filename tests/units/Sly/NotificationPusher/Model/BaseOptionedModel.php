@@ -1,9 +1,9 @@
 <?php
 
-namespace tests\units\SoldierCorp\NotificationPusher\Model;
+namespace tests\units\soldiercorp\NotificationPusher\Model;
 
 use mageekguy\atoum as Units;
-use SoldierCorp\NotificationPusher\Model\Message;
+use soldiercorp\NotificationPusher\Model\Message;
 
 /**
  * BaseOptionedModel.

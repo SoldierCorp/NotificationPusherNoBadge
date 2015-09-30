@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace SoldierCorp\NotificationPusher\Model;
+namespace soldiercorp\NotificationPusher\Model;
 
 /**
  * Device.
@@ -50,7 +50,7 @@ class Device extends BaseParameteredModel implements DeviceInterface
      *
      * @param string $token Token
      *
-     * @return \SoldierCorp\NotificationPusher\Model\DeviceInterface
+     * @return \soldiercorp\NotificationPusher\Model\DeviceInterface
      */
     public function setToken($token)
     {

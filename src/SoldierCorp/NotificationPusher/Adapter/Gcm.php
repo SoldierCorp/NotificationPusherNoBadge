@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace SoldierCorp\NotificationPusher\Adapter;
+namespace soldiercorp\NotificationPusher\Adapter;
 
-use SoldierCorp\NotificationPusher\Model\BaseOptionedModel;
-use SoldierCorp\NotificationPusher\Model\PushInterface;
-use SoldierCorp\NotificationPusher\Collection\DeviceCollection;
-use SoldierCorp\NotificationPusher\Exception\PushException;
+use soldiercorp\NotificationPusher\Model\BaseOptionedModel;
+use soldiercorp\NotificationPusher\Model\PushInterface;
+use soldiercorp\NotificationPusher\Collection\DeviceCollection;
+use soldiercorp\NotificationPusher\Exception\PushException;
 
 use Zend\Http\Client as HttpClient;
 use Zend\Http\Client\Adapter\Socket as HttpSocketAdapter;
@@ -28,7 +28,7 @@ use InvalidArgumentException;
 /**
  * GCM adapter.
  *
- * @uses \SoldierCorp\NotificationPusher\Adapter\BaseAdapter
+ * @uses \soldiercorp\NotificationPusher\Adapter\BaseAdapter
  *
  * @author Cédric Dugat <cedric@dugat.me>
  */
@@ -55,7 +55,7 @@ class Gcm extends BaseAdapter
     /**
      * {@inheritdoc}
      *
-     * @throws \SoldierCorp\NotificationPusher\Exception\PushException
+     * @throws \soldiercorp\NotificationPusher\Exception\PushException
      */
     public function push(PushInterface $push)
     {
@@ -110,7 +110,7 @@ class Gcm extends BaseAdapter
      * Get service message from origin.
      *
      * @param array $tokens Tokens
-     * @param BaseOptionedModel|\SoldierCorp\NotificationPusher\Model\MessageInterface $message Message
+     * @param BaseOptionedModel|\soldiercorp\NotificationPusher\Model\MessageInterface $message Message
      *
      * @return \ZendService\Google\Gcm\Message
      */

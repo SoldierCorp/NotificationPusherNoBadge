@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace SoldierCorp\NotificationPusher\Exception;
+namespace soldiercorp\NotificationPusher\Exception;
 
 /**
  * AdapterException.
  *
  * @uses   \RuntimeException
- * @uses   \SoldierCorp\NotificationPusher\Exception\ExceptionInterface
+ * @uses   \soldiercorp\NotificationPusher\Exception\ExceptionInterface
  *
  * @author Cédric Dugat <cedric@dugat.me>
  */

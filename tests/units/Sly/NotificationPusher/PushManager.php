@@ -1,13 +1,13 @@
 <?php
 
-namespace tests\units\SoldierCorp\NotificationPusher;
+namespace tests\units\soldiercorp\NotificationPusher;
 
 use mageekguy\atoum as Units;
-use SoldierCorp\NotificationPusher\PushManager as TestedModel;
+use soldiercorp\NotificationPusher\PushManager as TestedModel;
 
-use SoldierCorp\NotificationPusher\Model\Message as BaseMessage;
-use SoldierCorp\NotificationPusher\Model\Device as BaseDevice;
-use SoldierCorp\NotificationPusher\Collection\DeviceCollection as BaseDeviceCollection;
+use soldiercorp\NotificationPusher\Model\Message as BaseMessage;
+use soldiercorp\NotificationPusher\Model\Device as BaseDevice;
+use soldiercorp\NotificationPusher\Collection\DeviceCollection as BaseDeviceCollection;
 
 /**
  * PushManager.
@@ -34,7 +34,7 @@ class PushManager extends Units\Test
     public function testCollection()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Model\Push', '\Mock'))
+            ->and($this->mockClass('\soldiercorp\NotificationPusher\Model\Push', '\Mock'))
             ->and($push = new \Mock\Push())
             ->and($push->getMockController()->getMessage = new BaseMessage('Test'))
             ->and($push->getMockController()->getDevices = new BaseDeviceCollection(array(new BaseDevice(self::APNS_TOKEN_EXAMPLE))))
@@ -43,7 +43,7 @@ class PushManager extends Units\Test
 
             ->when($object->add($push))
             ->object($object)
-                ->isInstanceOf('\SoldierCorp\NotificationPusher\Collection\PushCollection')
+                ->isInstanceOf('\soldiercorp\NotificationPusher\Collection\PushCollection')
                 ->hasSize(1)
         ;
     }
@@ -51,12 +51,12 @@ class PushManager extends Units\Test
     public function testPush()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($apnsAdapter = new \Mock\Apns())
             ->and($apnsAdapter->getMockController()->push = true)
 
             ->and($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Model\Push', '\Mock'))
+            ->and($this->mockClass('\soldiercorp\NotificationPusher\Model\Push', '\Mock'))
             ->and($push = new \Mock\Push())
             ->and($push->getMockController()->getMessage = new BaseMessage('Test'))
             ->and($push->getMockController()->getDevices = new BaseDeviceCollection(array(new BaseDevice(self::APNS_TOKEN_EXAMPLE))))
@@ -66,7 +66,7 @@ class PushManager extends Units\Test
             ->and($object->add($push))
 
             ->object($object->push())
-                ->isInstanceOf('\SoldierCorp\NotificationPusher\Collection\PushCollection')
+                ->isInstanceOf('\soldiercorp\NotificationPusher\Collection\PushCollection')
                 ->hasSize(1)
         ;
     }

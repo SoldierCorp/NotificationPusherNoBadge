@@ -1,9 +1,9 @@
 <?php
 
-namespace tests\units\SoldierCorp\NotificationPusher\Model;
+namespace tests\units\soldiercorp\NotificationPusher\Model;
 
 use mageekguy\atoum as Units;
-use SoldierCorp\NotificationPusher\Model\Device as TestedModel;
+use soldiercorp\NotificationPusher\Model\Device as TestedModel;
 
 /**
  * Device.
