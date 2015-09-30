@@ -2,8 +2,8 @@
 
 Standalone PHP library for easy devices message notifications push.
 
-[![Latest Stable Version](https://poser.pugx.org/sly/notification-pusher/v/stable.png)](https://packagist.org/packages/sly/notification-pusher)
-[![Total Downloads](https://poser.pugx.org/sly/notification-pusher/downloads.png)](https://packagist.org/packages/sly/notification-pusher)
+[![Latest Stable Version](https://poser.pugx.org/SoldierCorp/notification-pusher/v/stable.png)](https://packagist.org/packages/SoldierCorp/notification-pusher)
+[![Total Downloads](https://poser.pugx.org/SoldierCorp/notification-pusher/downloads.png)](https://packagist.org/packages/SoldierCorp/notification-pusher)
 [![Build Status](https://secure.travis-ci.org/Ph3nol/NotificationPusher.png)](http://travis-ci.org/Ph3nol/NotificationPusher)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/4f6f80c4-281a-4903-bf4c-1eb264995dbd/big.png)](https://insight.sensiolabs.com/projects/4f6f80c4-281a-4903-bf4c-1eb264995dbd)

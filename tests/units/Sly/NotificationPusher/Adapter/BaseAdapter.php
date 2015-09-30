@@ -1,9 +1,9 @@
 <?php
 
-namespace tests\units\Sly\NotificationPusher\Adapter;
+namespace tests\units\SoldierCorp\NotificationPusher\Adapter;
 
 use mageekguy\atoum as Units;
-use Sly\NotificationPusher\PushManager as BasePushManager;
+use SoldierCorp\NotificationPusher\PushManager as BasePushManager;
 
 /**
  * BaseAdapter.
@@ -16,7 +16,7 @@ class BaseAdapter extends Units\Test
     public function testAdapterKey()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($object = new \Mock\Apns())
             ->and($object->getMockController()->getAdapterKey = 'Apns')
             ->string($object->getAdapterKey())
@@ -29,7 +29,7 @@ class BaseAdapter extends Units\Test
     public function testEnvironment()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($object = new \Mock\Apns())
 
             ->when($object->setEnvironment(BasePushManager::ENVIRONMENT_DEV))

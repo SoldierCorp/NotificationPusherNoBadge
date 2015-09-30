@@ -1,13 +1,13 @@
 <?php
 
-namespace tests\units\Sly\NotificationPusher\Adapter;
+namespace tests\units\SoldierCorp\NotificationPusher\Adapter;
 
 use mageekguy\atoum as Units;
-use Sly\NotificationPusher\Adapter\Apns as TestedModel;
+use SoldierCorp\NotificationPusher\Adapter\Apns as TestedModel;
 
-use Sly\NotificationPusher\Model\Message as BaseMessage;
-use Sly\NotificationPusher\Model\Device as BaseDevice;
-use Sly\NotificationPusher\Collection\DeviceCollection as BaseDeviceCollection;
+use SoldierCorp\NotificationPusher\Model\Message as BaseMessage;
+use SoldierCorp\NotificationPusher\Model\Device as BaseDevice;
+use SoldierCorp\NotificationPusher\Collection\DeviceCollection as BaseDeviceCollection;
 
 use ZendService\Apple\Apns\Message as BaseServiceMessage;
 use ZendService\Apple\Apns\Client\Message as BaseServiceClient;
@@ -34,12 +34,12 @@ class Apns extends Units\Test
             ->exception(function() {
                 $object = new TestedModel(array('certificate' => 'absent.pem'));
             })
-                ->isInstanceOf('\Sly\NotificationPusher\Exception\AdapterException')
+                ->isInstanceOf('\SoldierCorp\NotificationPusher\Exception\AdapterException')
                 ->message
                     ->contains('does not exist')
 
             ->when($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($object = new \Mock\Apns())
             ->and($object->setParameters(array('certificate' => 'test.pem', 'passPhrase' => 'test')))
             ->array($object->getParameters())
@@ -53,7 +53,7 @@ class Apns extends Units\Test
     public function testSupports()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($object = new \Mock\Apns())
             ->boolean($object->supports('wrongToken'))
                 ->isFalse()
@@ -65,7 +65,7 @@ class Apns extends Units\Test
     public function testDefinedParameters()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($object = new \Mock\Apns())
             ->array($defaultParameters = $object->getDefinedParameters())
                 ->isEmpty()
@@ -75,7 +75,7 @@ class Apns extends Units\Test
     public function testDefaultParameters()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($object = new \Mock\Apns())
             ->array($defaultParameters = $object->getDefaultParameters())
                 ->isNotEmpty()
@@ -88,7 +88,7 @@ class Apns extends Units\Test
     public function testRequiredParameters()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($object = new \Mock\Apns())
             ->array($requiredParameters = $object->getRequiredParameters())
                 ->isNotEmpty()
@@ -99,7 +99,7 @@ class Apns extends Units\Test
     public function testGetOpenedClient()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($object = new \Mock\Apns())
             ->and($this->mockGenerator()->orphanize('__construct'))
             ->and($this->mockGenerator()->orphanize('open'))
@@ -121,16 +121,16 @@ class Apns extends Units\Test
     public function testGetServiceMessageFromOrigin()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($object = new \Mock\Apns())
 
             ->and($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Model\Device', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Model\Device', '\Mock'))
             ->and($device = new \Mock\Device())
             ->and($device->getMockController()->getToken = self::APNS_TOKEN_EXAMPLE)
 
             ->and($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Model\Message', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Model\Message', '\Mock'))
             ->and($message = new \Mock\Message())
             ->and($message->getMockController()->getText = 'Test')
 
@@ -142,7 +142,7 @@ class Apns extends Units\Test
     public function testPush()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($object = new \Mock\Apns())
 
             ->and($this->mockClass('\ZendService\Apple\Apns\Response\Message', '\Mock\ZendService', 'Response'))
@@ -156,7 +156,7 @@ class Apns extends Units\Test
             ->and($serviceClient->getMockController()->send = new $serviceResponse)
 
             ->and($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Model\Push', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Model\Push', '\Mock'))
             ->and($push = new \Mock\Push())
             ->and($push->getMockController()->getMessage = new BaseMessage('Test'))
             ->and($push->getMockController()->getDevices = new BaseDeviceCollection(array(new BaseDevice(self::APNS_TOKEN_EXAMPLE))))
@@ -165,7 +165,7 @@ class Apns extends Units\Test
             ->and($object->getMockController()->getOpenedClient = $serviceClient)
 
             ->object($object->push($push))
-                ->isInstanceOf('\Sly\NotificationPusher\Collection\DeviceCollection')
+                ->isInstanceOf('\SoldierCorp\NotificationPusher\Collection\DeviceCollection')
                 ->hasSize(1)
         ;
     }
@@ -173,7 +173,7 @@ class Apns extends Units\Test
     public function testFeedback()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\Sly\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($object = new \Mock\Apns())
 
             ->and($this->mockClass('\ZendService\Apple\Apns\Response\Message', '\Mock\ZendService', 'Response'))

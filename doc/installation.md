@@ -7,10 +7,10 @@ Use [Composer](http://getcomposer.org) to install this library.
 Into your `composer.json` file, just include this library with adding:
 
 ```
-"sly/notification-pusher": "2.x"
+"SoldierCorp/notification-pusher": "2.x"
 ```
 
-Then, run `composer update sly/notification-pusher` and enjoy.
+Then, run `composer update SoldierCorp/notification-pusher` and enjoy.
 
 ## Documentation index
 
