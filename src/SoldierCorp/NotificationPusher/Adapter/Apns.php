@@ -193,7 +193,8 @@ class Apns extends BaseAdapter
         $serviceMessage->setId(sha1($device->getToken().$message->getText()));
         $serviceMessage->setAlert($alert);
         $serviceMessage->setToken($device->getToken());
-        $serviceMessage->setBadge($badge);
+        if ($badge != 0)
+            $serviceMessage->setBadge($badge);
         $serviceMessage->setCustom($message->getOption('custom', array()));
 
         if (null !== $sound) {
