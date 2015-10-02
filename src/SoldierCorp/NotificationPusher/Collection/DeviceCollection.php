@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Collection;
+namespace SoldierCorp\NotificationPusher\Collection;
 
-use soldiercorp\NotificationPusher\Model\DeviceInterface;
+use SoldierCorp\NotificationPusher\Model\DeviceInterface;
 
 /**
  * DeviceCollection.
  *
- * @uses \soldiercorp\NotificationPusher\Collection\AbstractCollection
+ * @uses \SoldierCorp\NotificationPusher\Collection\AbstractCollection
  * @uses \IteratorAggregate
  * @author Cédric Dugat <cedric@dugat.me>
  */
@@ -45,7 +45,7 @@ class DeviceCollection extends AbstractCollection implements \IteratorAggregate
     }
 
     /**
-     * @param \soldiercorp\NotificationPusher\Model\DeviceInterface $device Device
+     * @param \SoldierCorp\NotificationPusher\Model\DeviceInterface $device Device
      */
     public function add(DeviceInterface $device)
     {

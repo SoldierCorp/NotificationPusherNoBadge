@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Console\Command;
+namespace SoldierCorp\NotificationPusher\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -17,11 +17,11 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use soldiercorp\NotificationPusher\PushManager;
-use soldiercorp\NotificationPusher\Model\Device;
-use soldiercorp\NotificationPusher\Model\Message;
-use soldiercorp\NotificationPusher\Model\Push;
-use soldiercorp\NotificationPusher\Exception\AdapterException;
+use SoldierCorp\NotificationPusher\PushManager;
+use SoldierCorp\NotificationPusher\Model\Device;
+use SoldierCorp\NotificationPusher\Model\Message;
+use SoldierCorp\NotificationPusher\Model\Push;
+use SoldierCorp\NotificationPusher\Exception\AdapterException;
 
 use Doctrine\Common\Inflector\Inflector;
 
@@ -108,7 +108,7 @@ class PushCommand extends Command
     private function getAdapterClassFromArgument($argument)
     {
         if (!class_exists($adapterClass = $argument) &&
-            !class_exists($adapterClass = '\\soldiercorp\\NotificationPusher\\Adapter\\'.ucfirst($argument))) {
+            !class_exists($adapterClass = '\\SoldierCorp\\NotificationPusher\\Adapter\\'.ucfirst($argument))) {
             throw new AdapterException(
                 sprintf(
                     'Adapter class %s does not exist',
@@ -123,7 +123,7 @@ class PushCommand extends Command
     /**
      * {@inheritdoc}
      *
-     * @return \soldiercorp\NotificationPusher\Adapter\AdapterInterface
+     * @return \SoldierCorp\NotificationPusher\Adapter\AdapterInterface
      */
     private function getReadyAdapter(InputInterface $input, OutputInterface $output)
     {

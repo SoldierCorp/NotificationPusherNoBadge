@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Adapter;
+namespace SoldierCorp\NotificationPusher\Adapter;
 
-use soldiercorp\NotificationPusher\Model\PushInterface;
+use SoldierCorp\NotificationPusher\Model\PushInterface;
 
 /**
  * AdapterInterface.
@@ -23,9 +23,9 @@ interface AdapterInterface
     /**
      * Push.
      *
-     * @param \soldiercorp\NotificationPusher\Model\PushInterface $push Push
+     * @param \SoldierCorp\NotificationPusher\Model\PushInterface $push Push
      *
-     * @return \soldiercorp\NotificationPusher\Collection\DeviceCollection
+     * @return \SoldierCorp\NotificationPusher\Collection\DeviceCollection
      */
     public function push(PushInterface $push);
 

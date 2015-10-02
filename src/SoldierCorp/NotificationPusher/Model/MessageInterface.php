@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Model;
+namespace SoldierCorp\NotificationPusher\Model;
 
 /**
  * MessageInterface
@@ -30,7 +30,7 @@ interface MessageInterface
      *
      * @param string $text Text
      *
-     * @return \soldiercorp\NotificationPusher\Model\MessageInterface
+     * @return \SoldierCorp\NotificationPusher\Model\MessageInterface
      */
     public function setText($text);
 }

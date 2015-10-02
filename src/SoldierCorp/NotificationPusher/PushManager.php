@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher;
+namespace SoldierCorp\NotificationPusher;
 
-use soldiercorp\NotificationPusher\Collection\PushCollection;
-use soldiercorp\NotificationPusher\Adapter\AdapterInterface;
-use soldiercorp\NotificationPusher\Exception\AdapterException;
+use SoldierCorp\NotificationPusher\Collection\PushCollection;
+use SoldierCorp\NotificationPusher\Adapter\AdapterInterface;
+use SoldierCorp\NotificationPusher\Exception\AdapterException;
 
 /**
  * PushManager.
  *
- * @uses \soldiercorp\NotificationPusher\Collection\PushCollection
+ * @uses \SoldierCorp\NotificationPusher\Collection\PushCollection
  * @author Cédric Dugat <cedric@dugat.me>
  */
 class PushManager extends PushCollection
@@ -56,7 +56,7 @@ class PushManager extends PushCollection
     /**
      * Push.
      *
-     * @return \soldiercorp\NotificationPusher\Collection\PushCollection
+     * @return \SoldierCorp\NotificationPusher\Collection\PushCollection
      */
     public function push()
     {
@@ -75,7 +75,7 @@ class PushManager extends PushCollection
     /**
      * Get feedback.
      *
-     * @param \soldiercorp\NotificationPusher\Adapter\AdapterInterface $adapter Adapter
+     * @param \SoldierCorp\NotificationPusher\Adapter\AdapterInterface $adapter Adapter
      *
      * @return array
      *

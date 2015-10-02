@@ -1,13 +1,13 @@
 <?php
 
-namespace tests\units\soldiercorp\NotificationPusher\Adapter;
+namespace tests\units\SoldierCorp\NotificationPusher\Adapter;
 
 use mageekguy\atoum as Units;
-use soldiercorp\NotificationPusher\Adapter\Gcm as TestedModel;
+use SoldierCorp\NotificationPusher\Adapter\Gcm as TestedModel;
 
-use soldiercorp\NotificationPusher\Model\Message as BaseMessage;
-use soldiercorp\NotificationPusher\Model\Device as BaseDevice;
-use soldiercorp\NotificationPusher\Collection\DeviceCollection as BaseDeviceCollection;
+use SoldierCorp\NotificationPusher\Model\Message as BaseMessage;
+use SoldierCorp\NotificationPusher\Model\Device as BaseDevice;
+use SoldierCorp\NotificationPusher\Collection\DeviceCollection as BaseDeviceCollection;
 
 use ZendService\Google\Gcm\Client as BaseServiceClient;
 use ZendService\Google\Gcm\Message as BaseServiceMessage;
@@ -35,7 +35,7 @@ class Gcm extends Units\Test
                     ->contains('apiKey')
 
             ->when($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Gcm', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Gcm', '\Mock'))
             ->and($object = new \Mock\Gcm())
             ->and($object->setParameters(array('apiKey' => 'test')))
             ->array($object->getParameters())
@@ -49,7 +49,7 @@ class Gcm extends Units\Test
     public function testSupports()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Gcm', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Gcm', '\Mock'))
             ->and($object = new \Mock\Gcm())
             ->boolean($object->supports('')) // Test empty string
                 ->isFalse()
@@ -69,7 +69,7 @@ class Gcm extends Units\Test
     public function testDefinedParameters()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Gcm', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Gcm', '\Mock'))
             ->and($object = new \Mock\Gcm())
             ->array($definedParameters = $object->getDefinedParameters())
             ->isNotEmpty()
@@ -86,7 +86,7 @@ class Gcm extends Units\Test
     public function testDefaultParameters()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Gcm', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Gcm', '\Mock'))
             ->and($object = new \Mock\Gcm())
             ->array($defaultParameters = $object->getDefaultParameters())
                 ->isEmpty()
@@ -96,7 +96,7 @@ class Gcm extends Units\Test
     public function testRequiredParameters()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Gcm', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Gcm', '\Mock'))
             ->and($object = new \Mock\Gcm())
             ->array($requiredParameters = $object->getRequiredParameters())
                 ->isNotEmpty()
@@ -107,7 +107,7 @@ class Gcm extends Units\Test
     public function testGetOpenedClient()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Gcm', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Gcm', '\Mock'))
             ->and($object = new \Mock\Gcm())
             ->and($this->mockGenerator()->orphanize('__construct'))
             ->and($this->mockGenerator()->orphanize('open'))
@@ -129,11 +129,11 @@ class Gcm extends Units\Test
     public function testGetServiceMessageFromOrigin()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Gcm', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Gcm', '\Mock'))
             ->and($object = new \Mock\Gcm())
 
             ->and($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Model\Message', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Model\Message', '\Mock'))
             ->and($message = new \Mock\Message())
             ->and($message->getMockController()->getText = 'Test')
 
@@ -145,7 +145,7 @@ class Gcm extends Units\Test
     public function testPush()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Gcm', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Gcm', '\Mock'))
             ->and($object = new \Mock\Gcm())
 
             ->and($this->mockClass('\ZendService\Google\Gcm\Response', '\Mock\ZendService'))
@@ -159,7 +159,7 @@ class Gcm extends Units\Test
             ->and($serviceClient->getMockController()->send = new $serviceResponse)
 
             ->and($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Model\Push', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Model\Push', '\Mock'))
             ->and($push = new \Mock\Push())
             ->and($push->getMockController()->getMessage = new BaseMessage('Test'))
             ->and($push->getMockController()->getDevices = new BaseDeviceCollection(array(new BaseDevice(self::GCM_TOKEN_EXAMPLE))))
@@ -168,7 +168,7 @@ class Gcm extends Units\Test
             ->and($object->getMockController()->getOpenedClient = $serviceClient)
 
             ->object($object->push($push))
-                ->isInstanceOf('\soldiercorp\NotificationPusher\Collection\DeviceCollection')
+                ->isInstanceOf('\SoldierCorp\NotificationPusher\Collection\DeviceCollection')
                 ->hasSize(1)
         ;
     }

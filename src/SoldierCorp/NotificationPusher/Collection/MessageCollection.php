@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Collection;
+namespace SoldierCorp\NotificationPusher\Collection;
 
-use soldiercorp\NotificationPusher\Model\MessageInterface;
+use SoldierCorp\NotificationPusher\Model\MessageInterface;
 
 /**
  * MessageCollection.
  *
- * @uses \soldiercorp\NotificationPusher\Collection\AbstractCollection
+ * @uses \SoldierCorp\NotificationPusher\Collection\AbstractCollection
  * @uses \IteratorAggregate
  * @author Cédric Dugat <cedric@dugat.me>
  */
@@ -39,7 +39,7 @@ class MessageCollection extends AbstractCollection implements \IteratorAggregate
     }
 
     /**
-     * @param \soldiercorp\NotificationPusher\Model\MessageInterface $message Message
+     * @param \SoldierCorp\NotificationPusher\Model\MessageInterface $message Message
      */
     public function add(MessageInterface $message)
     {

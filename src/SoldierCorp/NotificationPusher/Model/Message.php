@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Model;
+namespace SoldierCorp\NotificationPusher\Model;
 
 /**
  * Message.
@@ -50,7 +50,7 @@ class Message extends BaseOptionedModel implements MessageInterface
      *
      * @param string $text Text
      *
-     * @return \soldiercorp\NotificationPusher\Model\MessageInterface
+     * @return \SoldierCorp\NotificationPusher\Model\MessageInterface
      */
     public function setText($text)
     {

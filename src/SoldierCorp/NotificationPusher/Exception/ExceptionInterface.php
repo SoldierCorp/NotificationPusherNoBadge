@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Exception;
+namespace SoldierCorp\NotificationPusher\Exception;
 
 /**
  * ExceptionInterface.

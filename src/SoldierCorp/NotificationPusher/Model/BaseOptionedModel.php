@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Model;
+namespace SoldierCorp\NotificationPusher\Model;
 
 /**
  * BaseOptionedModel.
@@ -63,7 +63,7 @@ abstract class BaseOptionedModel
      *
      * @param array $options Options
      *
-     * @return \soldiercorp\NotificationPusher\Model\BaseOptionedModel
+     * @return \SoldierCorp\NotificationPusher\Model\BaseOptionedModel
      */
     public function setOptions($options)
     {

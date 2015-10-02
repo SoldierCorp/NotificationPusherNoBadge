@@ -11,12 +11,12 @@
 
 require_once '/path/to/vendor/autoload.php';
 
-use soldiercorp\NotificationPusher\PushManager,
-    soldiercorp\NotificationPusher\Adapter\Gcm as GcmAdapter,
-    soldiercorp\NotificationPusher\Collection\DeviceCollection,
-    soldiercorp\NotificationPusher\Model\Device,
-    soldiercorp\NotificationPusher\Model\Message,
-    soldiercorp\NotificationPusher\Model\Push
+use SoldierCorp\NotificationPusher\PushManager,
+    SoldierCorp\NotificationPusher\Adapter\Gcm as GcmAdapter,
+    SoldierCorp\NotificationPusher\Collection\DeviceCollection,
+    SoldierCorp\NotificationPusher\Model\Device,
+    SoldierCorp\NotificationPusher\Model\Message,
+    SoldierCorp\NotificationPusher\Model\Push
 ;
 
 // First, instantiate the manager.

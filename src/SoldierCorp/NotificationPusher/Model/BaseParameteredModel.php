@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Model;
+namespace SoldierCorp\NotificationPusher\Model;
 
 /**
  * BaseParameteredModel.
@@ -63,7 +63,7 @@ abstract class BaseParameteredModel
      *
      * @param array $parameters Parameters
      *
-     * @return \soldiercorp\NotificationPusher\Model\BaseParameteredModel
+     * @return \SoldierCorp\NotificationPusher\Model\BaseParameteredModel
      */
     public function setParameters($parameters)
     {

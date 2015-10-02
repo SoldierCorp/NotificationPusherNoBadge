@@ -1,14 +1,14 @@
 <?php
 
-namespace tests\units\soldiercorp\NotificationPusher\Model;
+namespace tests\units\SoldierCorp\NotificationPusher\Model;
 
 use mageekguy\atoum as Units;
-use soldiercorp\NotificationPusher\Model\Push as TestedModel;
+use SoldierCorp\NotificationPusher\Model\Push as TestedModel;
 
-use soldiercorp\NotificationPusher\Model\Message as BaseMessage;
-use soldiercorp\NotificationPusher\Model\Device as BaseDevice;
-use soldiercorp\NotificationPusher\Collection\DeviceCollection as BaseDeviceCollection;
-use soldiercorp\NotificationPusher\Adapter\Apns as BaseApnsAdapter;
+use SoldierCorp\NotificationPusher\Model\Message as BaseMessage;
+use SoldierCorp\NotificationPusher\Model\Device as BaseDevice;
+use SoldierCorp\NotificationPusher\Collection\DeviceCollection as BaseDeviceCollection;
+use SoldierCorp\NotificationPusher\Adapter\Apns as BaseApnsAdapter;
 
 /**
  * Push.
@@ -23,7 +23,7 @@ class Push extends Units\Test
 
     public function testConstructWithOneDevice()
     {
-        $this->if($this->mockClass('\soldiercorp\NotificationPusher\Adapter\AdapterInterface', '\Mock'))
+        $this->if($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\AdapterInterface', '\Mock'))
             ->and($adapter = new \Mock\AdapterInterface())
             ->and($devices = new BaseDevice('Token1'))
             ->and($message = new BaseMessage('Test'))
@@ -31,7 +31,7 @@ class Push extends Units\Test
             ->and($object = new TestedModel($adapter, $devices, $message))
 
             ->object($object->getDevices())
-                ->isInstanceOf('\soldiercorp\NotificationPusher\Collection\DeviceCollection')
+                ->isInstanceOf('\SoldierCorp\NotificationPusher\Collection\DeviceCollection')
             ->integer($object->getDevices()->count())
                 ->isEqualTo(1)
             ->array($object->getOptions())
@@ -41,7 +41,7 @@ class Push extends Units\Test
 
     public function testConstructWithManyDevicesAndOptions()
     {
-        $this->if($this->mockClass('\soldiercorp\NotificationPusher\Adapter\AdapterInterface', '\Mock'))
+        $this->if($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\AdapterInterface', '\Mock'))
             ->and($adapter = new \Mock\AdapterInterface())
             ->and($devices = new BaseDeviceCollection(array(new BaseDevice('Token1'), new BaseDevice('Token2'), new BaseDevice('Token3'))))
             ->and($message = new BaseMessage('Test'))
@@ -49,7 +49,7 @@ class Push extends Units\Test
             ->and($object = new TestedModel($adapter, $devices, $message, array('param' => 'test')))
 
             ->object($object->getDevices())
-                ->isInstanceOf('\soldiercorp\NotificationPusher\Collection\DeviceCollection')
+                ->isInstanceOf('\SoldierCorp\NotificationPusher\Collection\DeviceCollection')
             ->integer($object->getDevices()->count())
                 ->isEqualTo(3)
             ->array($object->getOptions())
@@ -62,7 +62,7 @@ class Push extends Units\Test
 
     public function testStatus()
     {
-        $this->if($this->mockClass('\soldiercorp\NotificationPusher\Adapter\AdapterInterface', '\Mock'))
+        $this->if($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\AdapterInterface', '\Mock'))
             ->and($adapter = new \Mock\AdapterInterface())
             ->and($devices = new BaseDeviceCollection(array(new BaseDevice('Token1'), new BaseDevice('Token2'), new BaseDevice('Token3'))))
             ->and($message = new BaseMessage('Test'))
@@ -99,9 +99,9 @@ class Push extends Units\Test
     public function testDevicesTokensCheck()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Gcm', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Gcm', '\Mock'))
 
             ->and($apnsAdapter = new \mock\Apns())
             ->and($gcmAdapter = new \mock\Gcm())
@@ -111,7 +111,7 @@ class Push extends Units\Test
             ->exception(function () use ($apnsAdapter, $badDevice, $message) {
                 $object = new TestedModel($apnsAdapter, $badDevice, $message);
             })
-                ->isInstanceOf('\soldiercorp\NotificationPusher\Exception\AdapterException')
+                ->isInstanceOf('\SoldierCorp\NotificationPusher\Exception\AdapterException')
 
             ->when($goodDevice = new BaseDevice(self::APNS_TOKEN_EXAMPLE))
             ->object($object = new TestedModel($apnsAdapter, $goodDevice, $message))
@@ -121,9 +121,9 @@ class Push extends Units\Test
     public function testAdapter()
     {
         $this->if($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Apns', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Apns', '\Mock'))
             ->and($this->mockGenerator()->orphanize('__construct'))
-            ->and($this->mockClass('\soldiercorp\NotificationPusher\Adapter\Gcm', '\Mock'))
+            ->and($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\Gcm', '\Mock'))
 
             ->and($apnsAdapter = new \mock\Apns())
             ->and($gcmAdapter = new \mock\Gcm())
@@ -133,31 +133,31 @@ class Push extends Units\Test
             ->and($object = new TestedModel($apnsAdapter, $devices, $message))
 
             ->object($object->getAdapter())
-                ->isInstanceOf('\soldiercorp\NotificationPusher\Adapter\Apns')
+                ->isInstanceOf('\SoldierCorp\NotificationPusher\Adapter\Apns')
 
             ->when($object->setAdapter($gcmAdapter))
             ->and($object->setDevices(new BaseDeviceCollection(array(new BaseDevice(self::GCM_TOKEN_EXAMPLE)))))
             ->object($object->getAdapter())
-                ->isInstanceOf('\soldiercorp\NotificationPusher\Adapter\Gcm')
+                ->isInstanceOf('\SoldierCorp\NotificationPusher\Adapter\Gcm')
         ;
     }
 
     public function testMessage()
     {
-        $this->if($this->mockClass('\soldiercorp\NotificationPusher\Adapter\AdapterInterface', '\Mock'))
+        $this->if($this->mockClass('\SoldierCorp\NotificationPusher\Adapter\AdapterInterface', '\Mock'))
             ->and($adapter = new \Mock\AdapterInterface())
             ->and($devices = new BaseDeviceCollection(array(new BaseDevice('Token1'), new BaseDevice('Token2'), new BaseDevice('Token3'))))
             ->and($message = new BaseMessage('Test'))
 
             ->and($object = new TestedModel($adapter, $devices, $message))
             ->object($object->getMessage())
-                ->isInstanceOf('\soldiercorp\NotificationPusher\Model\Message')
+                ->isInstanceOf('\SoldierCorp\NotificationPusher\Model\Message')
             ->string($object->getMessage()->getText())
                 ->isEqualTo('Test')
 
             ->when($object->setMessage(new BaseMessage('Test 2')))
             ->object($object->getMessage())
-                ->isInstanceOf('\soldiercorp\NotificationPusher\Model\Message')
+                ->isInstanceOf('\SoldierCorp\NotificationPusher\Model\Message')
             ->string($object->getMessage()->getText())
                 ->isEqualTo('Test 2')
         ;

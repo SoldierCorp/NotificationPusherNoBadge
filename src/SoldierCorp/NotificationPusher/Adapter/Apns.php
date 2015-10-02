@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Adapter;
+namespace SoldierCorp\NotificationPusher\Adapter;
 
-use soldiercorp\NotificationPusher\Model\BaseOptionedModel;
-use soldiercorp\NotificationPusher\Model\PushInterface;
-use soldiercorp\NotificationPusher\Model\DeviceInterface;
-use soldiercorp\NotificationPusher\Exception\AdapterException;
-use soldiercorp\NotificationPusher\Exception\PushException;
-use soldiercorp\NotificationPusher\Collection\DeviceCollection;
+use SoldierCorp\NotificationPusher\Model\BaseOptionedModel;
+use SoldierCorp\NotificationPusher\Model\PushInterface;
+use SoldierCorp\NotificationPusher\Model\DeviceInterface;
+use SoldierCorp\NotificationPusher\Exception\AdapterException;
+use SoldierCorp\NotificationPusher\Exception\PushException;
+use SoldierCorp\NotificationPusher\Collection\DeviceCollection;
 
 use ZendService\Apple\Apns\Client\AbstractClient as ServiceAbstractClient;
 use ZendService\Apple\Apns\Client\Message as ServiceClient;
@@ -29,7 +29,7 @@ use ZendService\Apple\Apns\Client\Feedback as ServiceFeedbackClient;
 /**
  * APNS adapter.
  *
- * @uses \soldiercorp\NotificationPusher\Adapter\BaseAdapter
+ * @uses \SoldierCorp\NotificationPusher\Adapter\BaseAdapter
  *
  * @author Cédric Dugat <cedric@dugat.me>
  */
@@ -45,7 +45,7 @@ class Apns extends BaseAdapter
     /**
      * {@inheritdoc}
      *
-     * @throws \soldiercorp\NotificationPusher\Exception\AdapterException
+     * @throws \SoldierCorp\NotificationPusher\Exception\AdapterException
      */
     public function __construct(array $parameters = array())
     {
@@ -61,7 +61,7 @@ class Apns extends BaseAdapter
     /**
      * {@inheritdoc}
      *
-     * @throws \soldiercorp\NotificationPusher\Exception\PushException
+     * @throws \SoldierCorp\NotificationPusher\Exception\PushException
      */
     public function push(PushInterface $push)
     {
@@ -153,8 +153,8 @@ class Apns extends BaseAdapter
     /**
      * Get service message from origin.
      *
-     * @param \soldiercorp\NotificationPusher\Model\DeviceInterface $device Device
-     * @param BaseOptionedModel|\soldiercorp\NotificationPusher\Model\MessageInterface $message Message
+     * @param \SoldierCorp\NotificationPusher\Model\DeviceInterface $device Device
+     * @param BaseOptionedModel|\SoldierCorp\NotificationPusher\Model\MessageInterface $message Message
      *
      * @return \ZendService\Apple\Apns\Message
      */

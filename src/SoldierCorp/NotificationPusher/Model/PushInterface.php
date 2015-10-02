@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Model;
+namespace SoldierCorp\NotificationPusher\Model;
 
 use DateTime;
-use soldiercorp\NotificationPusher\Adapter\AdapterInterface;
-use soldiercorp\NotificationPusher\Collection\DeviceCollection;
+use SoldierCorp\NotificationPusher\Adapter\AdapterInterface;
+use SoldierCorp\NotificationPusher\Collection\DeviceCollection;
 
 /**
  * PushInterface

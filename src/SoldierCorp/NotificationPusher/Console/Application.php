@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Console;
+namespace SoldierCorp\NotificationPusher\Console;
 
 use Symfony\Component\Console\Application as BaseApplication;
-use soldiercorp\NotificationPusher\NotificationPusher;
-use soldiercorp\NotificationPusher\Console\Command\PushCommand;
+use SoldierCorp\NotificationPusher\NotificationPusher;
+use SoldierCorp\NotificationPusher\Console\Command\PushCommand;
 
 /**
  * Application.

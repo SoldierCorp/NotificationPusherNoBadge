@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Collection;
+namespace SoldierCorp\NotificationPusher\Collection;
 
 /**
  * AbstractCollection.
@@ -29,7 +29,7 @@ abstract class AbstractCollection
      *
      * @param string $key Key
      *
-     * @return \soldiercorp\NotificationPusher\Model\MessageInterface|false
+     * @return \SoldierCorp\NotificationPusher\Model\MessageInterface|false
      */
     public function get($key)
     {

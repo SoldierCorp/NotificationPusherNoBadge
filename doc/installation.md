@@ -10,7 +10,7 @@ Into your `composer.json` file, just include this library with adding:
 "soldiercorp/notification-pusher": "2.x"
 ```
 
-Then, run `composer update soldiercorp/notification-pusher` and enjoy.
+Then, run `composer update SoldierCorp/notification-pusher` and enjoy.
 
 ## Documentation index
 

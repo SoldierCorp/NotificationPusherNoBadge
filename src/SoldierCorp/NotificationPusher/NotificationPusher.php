@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher;
+namespace SoldierCorp\NotificationPusher;
 
 /**
  * NotificationPusher.

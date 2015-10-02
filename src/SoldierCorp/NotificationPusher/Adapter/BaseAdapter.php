@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace soldiercorp\NotificationPusher\Adapter;
+namespace SoldierCorp\NotificationPusher\Adapter;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-use soldiercorp\NotificationPusher\Model\BaseParameteredModel;
-use soldiercorp\NotificationPusher\PushManager;
+use SoldierCorp\NotificationPusher\Model\BaseParameteredModel;
+use SoldierCorp\NotificationPusher\PushManager;
 
 /**
  * BaseAdapter.
@@ -100,7 +100,7 @@ abstract class BaseAdapter extends BaseParameteredModel implements AdapterInterf
      *
      * @param string $environment Environment value to set
      *
-     * @return \soldiercorp\NotificationPusher\Adapter\AdapterInterface
+     * @return \SoldierCorp\NotificationPusher\Adapter\AdapterInterface
      */
     public function setEnvironment($environment)
     {
